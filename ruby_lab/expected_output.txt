@@ -1,0 +1,13 @@
+3.144308
+19
+27
+Hello. There. My. Friend
+{:arange=>[], :erange=>["derange"], :irange=>["omnirange"], :orange=>["macrosporange", "megasporange", "microsporange", "oosporange", "orange", "sporange", "tetrasporange", "trichosporange", "zoosporange", "zygosporange"], :urange=>[]}
+Yen: ¥9235
+Dollar: $2876.00
+Dollar: $300.00
+Yen: ¥34000
+Yen: ¥9235 is less than Dollar: $2876.00!
+Yen: ¥9235 is equal to Yen: ¥9235!
+Yen: ¥34000 is greater than Dollar: $300.00!
+Dollar: $300.00 is equal to Dollar: $300.00!
