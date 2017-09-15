@@ -1,0 +1,113 @@
+// Place all the styles related to the Mirrors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base';
+
+.container {
+
+}
+
+$mirror-size: 800px;
+.mirror {
+  @extend .flex-centered;
+  position: absolute;
+  width: $mirror-size;
+  height: $mirror-size;
+  // padding-bottom: $mirror-size;
+  border-radius: 50%;
+  border: 6px dotted $white;
+}
+
+.rotable-container {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 96%;
+  pointer-events: none;
+  transition: 1s;
+  @include transition-timing-function(cubic-bezier(.22, .35, .28, .96))
+}
+
+.rotable-text {
+  margin: 0px auto;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Cinzel';
+  font-weight: $regular;
+}
+
+// Clock hand and members
+.smooth-animate {
+  transition: 3s;
+  @include transition-timing-function(cubic-bezier(.22, .35, .28, .96));
+}
+
+$clock-hand-width: 5px;
+$clock-hand-height: 35%;
+.clock-hand {
+  position: absolute;
+  margin-left: -($clock-hand-width / 2);
+  left: 50%;
+  top: 50% - $clock-hand-height;
+  width: $clock-hand-width;
+  height: $clock-hand-height;
+  border-radius: $clock-hand-width / 2;
+  background: $white;
+  transform-origin: bottom;
+  @extend .smooth-animate;
+}
+
+$clock-member-height: 6%;
+$clock-member-top-height-ratio: 1.5;
+$clock-member-top: -$clock-member-height * $clock-member-top-height-ratio;
+$clock-member-width: 30%;
+.clock-member {
+  @extend .flex-centered;
+  position: absolute;
+  margin-left: -($clock-member-width / 2);
+  left: 50%;
+  top: $clock-member-top;
+  height: $clock-member-height;
+  width: $clock-member-width;
+  // background-color: red;
+  transform-origin: center (($clock-member-top-height-ratio * 100%) + 50% / $clock-member-height * 100%);
+  @extend .smooth-animate;
+
+  font-size: 24px;
+  font-weight: $extra-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &.fade-0 {
+    // Placeholder
+    color: $white;
+  }
+  &.fade-1 {
+    color: $white-80;
+  }
+  &.fade-2 {
+    color: $white-60;
+  }
+}
+
+$number-label-size: 8%;
+$number-label-y: 36%;
+.number-label {
+  @extend .flex-centered;
+  position: absolute;
+  margin-left: -($number-label-size / 2);
+  left: 50%;
+  top: 50% - $number-label-y;
+  height: $number-label-size;
+  width: $number-label-size;
+  background: $black;
+  border: ($clock-hand-width / 2) solid $white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform-origin: center $number-label-y / $number-label-size * 100%;
+  @extend .smooth-animate;
+
+  font-size: 24px;
+  font-weight: $bold;
+}

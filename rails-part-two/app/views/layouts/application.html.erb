@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MagicM</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if mirror_signed_in? %>
+      <%= link_to 'Mirror Sign Out', destroy_mirror_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Mirror Sign In', mirror_session_path, method: :get %>
+    <% end %>
+    <% if member_signed_in? %>
+      <%= link_to 'Member Sign Out', destroy_member_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Member Sign In', member_session_path, method: :get %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
