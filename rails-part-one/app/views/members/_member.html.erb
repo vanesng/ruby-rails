@@ -1,0 +1,21 @@
+<p>
+  <strong>First name:</strong>
+  <%= member.first_name %>
+</p>
+ 
+<p>
+  <strong>Last name:</strong>
+  <%= member.last_name %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= member.activity %>
+</p>
+
+
+<p>
+  <%= link_to 'Remove Member', [member.mirror, member],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

@@ -1,0 +1,28 @@
+<p>
+  <strong>Codename:</strong>
+  <%= @mirror.codename %>
+</p>
+
+
+<%= link_to 'Activities', mirror_path(@mirror) << '/activities/' %> 
+
+<h2>Members</h2>
+<%= render @mirror.members %>
+
+<h2>Add a Member:</h2>
+<%= form_with(model: [ @mirror, @mirror.members.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+  </p>
+  <p>
+    <%= form.label :last_name %><br>
+    <%= form.text_area :last_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_mirror_path(@mirror) %> 
+<%= link_to 'Back to Mirrors', mirrors_path %>

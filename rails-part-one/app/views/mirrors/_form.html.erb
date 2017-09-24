@@ -1,0 +1,10 @@
+<%= form_with scope: :mirror, url: mirrors_path, local: true do |form| %>
+  <p>
+    <%= form.label :codename %><br>
+    <%= form.text_field :codename %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
