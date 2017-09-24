@@ -20,7 +20,8 @@ class MirrorsController < ApplicationController
   end
 
   def destroy
-
+    @mirror.destroy
+    redirect_to mirrors_path
   end
 
   def activities

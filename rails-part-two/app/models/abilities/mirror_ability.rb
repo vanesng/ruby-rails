@@ -13,10 +13,12 @@ class Abilities::MirrorAbility
 
     can [
       :index,
+      :destroy,
     ], Mirror
 
     can [
       :index,
     ], Member, mirror_id: mirror.id
+
   end
 end

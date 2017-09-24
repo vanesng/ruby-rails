@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :authenticate_member!, except: [:index], if: :mirror_viewable?
-  before_action :redirect_back, only: [:index], unless: :mirror_viewable?
+  # before_action :redirect_back, only: [:index], unless: :mirror_viewable?
 
   load_and_authorize_resource
 
@@ -18,7 +18,8 @@ class MembersController < ApplicationController
   end
 
   def destroy
-
+    @member.destroy
+    redirect_to mirrors_path
   end
 
   def location
